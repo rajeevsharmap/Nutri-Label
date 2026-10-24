@@ -1,0 +1,53 @@
+<!-- ============================================================
+     SCREEN 10 / 13 — CONTRIBUTOR VERIFICATION QUEUE
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-10
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md space-y-space-md" id="sim-screen-10">
+  <div class="flex items-center justify-between">
+    <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(4)">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <span class="font-headline-sm text-headline-sm text-primary font-bold">Community Queue</span>
+    <span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-data-mono text-label-sm font-bold">3 PENDING</span>
+  </div>
+  <div class="p-space-sm rounded-lg bg-surface-container-low">
+    <div class="font-label-sm text-label-sm font-semibold text-primary">Peer Verification Role</div>
+    <p class="font-body-sm text-body-sm text-on-surface-variant">Review submitted packaging labels vs OCR extractions to earn community trust score.</p>
+  </div>
+  <!-- Active Verification Card -->
+  <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm" id="verification-card">
+    <div class="flex items-center justify-between">
+      <div>
+        <div class="font-label-md text-label-md font-bold text-primary" id="verif-prod-name">High-Protein Seed Energy Bar</div>
+        <div class="font-data-mono text-label-sm text-on-surface-variant">EAN: 8904291882012</div>
+      </div>
+      <span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm" id="verif-status-badge">Under Review</span>
+    </div>
+    <div class="p-space-sm rounded bg-surface-container-low space-y-1">
+      <div class="flex justify-between font-label-sm text-label-sm">
+        <span class="text-on-surface-variant">Sugar per 100g:</span>
+        <span class="font-data-mono font-bold text-primary" id="verif-sugar-val">6.5g</span>
+      </div>
+      <div class="flex justify-between font-label-sm text-label-sm">
+        <span class="text-on-surface-variant">Protein per 100g:</span>
+        <span class="font-data-mono font-bold text-primary" id="verif-protein-val">22.0g</span>
+      </div>
+      <div class="flex justify-between font-label-sm text-label-sm">
+        <span class="text-on-surface-variant">Gluten Free Claim:</span>
+        <span class="font-data-mono font-bold text-secondary">Verified Clean</span>
+      </div>
+    </div>
+    <!-- Verification Actions -->
+    <div class="grid grid-cols-2 gap-2 pt-1">
+      <button class="py-2 rounded bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-fixed transition-colors flex items-center justify-center gap-1" onclick="approveVerification()">
+        <span class="material-symbols-outlined text-[16px]">check</span>
+        <span class="">Approve</span>
+      </button>
+      <button class="py-2 rounded bg-surface-container text-error font-label-md text-label-md font-semibold hover:bg-error-container transition-colors flex items-center justify-center gap-1" onclick="rejectVerification()">
+        <span class="material-symbols-outlined text-[16px]">close</span>
+        <span class="">Reject</span>
+      </button>
+    </div>
+  </div>
+</div>

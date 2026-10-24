@@ -1,0 +1,48 @@
+<!-- ============================================================
+     SCREEN 05 / 13 — BARCODE SCANNER (CameraX Viewport)
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-5
+     ============================================================ -->
+<div class="sim-screen hidden flex-col justify-between p-space-md h-full bg-primary text-on-primary relative overflow-hidden" id="sim-screen-5">
+  <!-- Scanner Top Controls -->
+  <div class="flex items-center justify-between z-10">
+    <button class="p-2 rounded-full bg-surface-container-highest/20 text-on-primary" onclick="jumpToSimulatorScreen(4)">
+      <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+    </button>
+    <span class="font-data-mono text-label-sm text-secondary-fixed">CameraX • Google ML Kit Active</span>
+    <button class="p-2 rounded-full bg-surface-container-highest/20 text-on-primary" onclick="toggleTorch(this)">
+      <span class="material-symbols-outlined text-[20px]">flash_on</span>
+    </button>
+  </div>
+  <!-- Central Camera Viewfinder Reticle -->
+  <div class="relative w-full max-w-[280px] h-[240px] mx-auto rounded-2xl flex items-center justify-center overflow-hidden" style="box-shadow: 0 0 0 9999px rgba(0, 24, 18, 0.75);">
+    <!-- Corner Marks -->
+    <div class="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-secondary-fixed"></div>
+    <div class="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-secondary-fixed"></div>
+    <div class="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-secondary-fixed"></div>
+    <div class="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-secondary-fixed"></div>
+    <!-- Scanning Laser Sweep Animation -->
+    <div class="w-full h-0.5 bg-secondary-container shadow-[0_0_8px_#96f3c0] animate-pulse"></div>
+    <div class="absolute bottom-3 font-data-mono text-label-sm text-secondary-fixed bg-primary-container/80 px-2 py-0.5 rounded">ALIGN BARCODE</div>
+  </div>
+  <!-- Scanner Trigger Actions for Prototype Testing -->
+  <div class="space-y-space-sm z-10">
+    <div class="p-space-sm rounded-xl bg-surface-container-highest/20 text-center space-y-1">
+      <div class="font-label-sm text-label-sm text-surface-variant">Simulate Scan Scenarios:</div>
+      <div class="grid grid-cols-3 gap-1.5">
+        <button class="py-1.5 px-2 rounded bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors" onclick="executeScanSequence('available')">Success (890103)</button>
+        <button class="py-1.5 px-2 rounded bg-surface-container-highest/40 text-surface-bright font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors" onclick="executeScanSequence('missing')">Missing Fields</button>
+        <button class="py-1.5 px-2 rounded bg-surface-container-highest/40 text-surface-bright font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors" onclick="executeScanSequence('unknown')">Unknown Barcode</button>
+      </div>
+    </div>
+    <button class="w-full py-2.5 rounded-lg bg-surface-container-highest/20 font-label-md text-label-md text-surface-bright hover:bg-surface-container-highest/30 transition-colors text-center" onclick="jumpToSimulatorScreen(8)">
+      Enter Barcode Manually
+    </button>
+  </div>
+  <!-- 4-Stage Loading Overlay for Scanner sequence -->
+  <div class="absolute inset-0 bg-primary/95 hidden flex-col items-center justify-center p-space-lg text-center z-40" id="scan-loading-overlay">
+    <div class="w-12 h-12 rounded-full border-4 border-secondary-container border-t-transparent animate-spin mb-space-md"></div>
+    <div class="font-headline-sm text-headline-sm text-secondary-fixed font-bold" id="scan-loading-step">Reading Barcode...</div>
+    <div class="font-body-sm text-body-sm text-surface-variant mt-1" id="scan-loading-desc">Google ML Kit processing frame buffer</div>
+  </div>
+</div>

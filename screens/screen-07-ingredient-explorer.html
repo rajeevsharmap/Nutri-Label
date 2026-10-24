@@ -1,0 +1,62 @@
+<!-- ============================================================
+     SCREEN 07 / 13 — INGREDIENT EXPLORER
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-7
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md space-y-space-md" id="sim-screen-7">
+  <div class="flex items-center justify-between">
+    <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(6)">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <span class="font-headline-sm text-headline-sm text-primary font-bold">Ingredient Explorer</span>
+    <span class="w-6"></span>
+  </div>
+  <!-- Search and Filter in Ingredients -->
+  <div class="relative">
+    <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+    <input class="w-full pl-9 pr-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none focus:ring-2 focus:ring-secondary/50" oninput="filterIngredients(this.value)" placeholder="Search additive code or name..." type="text">
+  </div>
+  <div class="flex gap-1.5 overflow-x-auto pb-1" id="ingredient-filter-chips">
+    <button class="ing-chip px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm" onclick="filterIngredientTab('all')">All (8)</button>
+    <button class="ing-chip px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm" onclick="filterIngredientTab('additive')">Additives (3)</button>
+    <button class="ing-chip px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm" onclick="filterIngredientTab('allergen')">Allergens (2)</button>
+  </div>
+  <!-- Ingredient List Items -->
+  <div class="space-y-2" id="ingredients-container">
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm ing-item" data-type="wholesome">
+      <div class="flex items-center justify-between">
+        <span class="font-label-md text-label-md font-bold text-primary">Rolled Oats (38%)</span>
+        <span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Safe Whole Food</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High in beta-glucan soluble fiber.</p>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm ing-item" data-type="allergen">
+      <div class="flex items-center justify-between">
+        <span class="font-label-md text-label-md font-bold text-primary">Whole Wheat Flour (Atta)</span>
+        <span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">Allergen (Gluten)</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Contains gliadin/glutenin proteins.</p>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm ing-item" data-type="additive">
+      <div class="flex items-center justify-between">
+        <span class="font-label-md text-label-md font-bold text-primary">Invert Sugar Syrup</span>
+        <span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">Added Sugar</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Mixture of glucose and fructose; sharp glycemic curve.</p>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm ing-item" data-type="additive">
+      <div class="flex items-center justify-between">
+        <span class="font-label-md text-label-md font-bold text-primary">INS 500(ii) - Sodium Bicarbonate</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Leavening Agent</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Standard baking soda. Generally recognized as safe (GRAS).</p>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm ing-item" data-type="additive">
+      <div class="flex items-center justify-between">
+        <span class="font-label-md text-label-md font-bold text-primary">INS 450(i) - Disodium Diphosphate</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Emulsifier / Salt</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Phosphorus additive. Monitor if managing renal conditions.</p>
+    </div>
+  </div>
+</div>

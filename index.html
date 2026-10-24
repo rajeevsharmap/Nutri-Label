@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <title>NutriLabel | Understand Your Food. Know Your Labels.</title>
+  <meta name="description"
+    content="NutriLabel is an academic prototype that helps you understand packaged-food labels: scan barcodes, check ingredients and nutrition against your dietary goals.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#092E25">
+  <link rel="canonical" href="https://nutrilabel.vercel.app/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <!-- Open Graph / Twitter (link previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NutriLabel">
+  <meta property="og:title" content="NutriLabel | Understand Your Food. Know Your Labels.">
+  <meta property="og:description"
+    content="Scan packaged food, understand its ingredients and compare nutrition with your dietary goals. Academic prototype.">
+  <meta property="og:url" content="https://nutrilabel.vercel.app/">
+  <meta property="og:image" content="https://nutrilabel.vercel.app/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="NutriLabel: Understand Your Food. Know Your Labels. Choose Better.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NutriLabel | Understand Your Food. Know Your Labels.">
+  <meta name="twitter:description"
+    content="Scan packaged food, understand its ingredients and compare nutrition with your dietary goals. Academic prototype.">
+  <meta name="twitter:image" content="https://nutrilabel.vercel.app/assets/img/og-image.png">
+  <!-- Structured data: tells search engines the site's name -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NutriLabel",
+      "alternateName": ["Nutri Label", "NutriLabel Nutrition Intelligence Platform"],
+      "url": "https://nutrilabel.vercel.app/",
+      "description": "Academic prototype that helps people understand packaged-food labels and compare them with their dietary goals."
+    }
+    </script>
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <!-- Stylesheets (tailwind.css is built with `npm run build:css`) -->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+</head>
+
+<body
+  class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+  <!-- ============ SITE HEADER / NAVIGATION ============ -->
+  <header id="site-header"
+    class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(9,46,37,0.06)]">
+    <div class="w-full px-space-lg lg:px-margin mx-auto">
+      <div class="h-20 flex items-center justify-between gap-space-md">
+        <div class="flex items-center gap-space-md">
+          <a class="flex items-center gap-space-sm group" data-path="overview" href="#overview">
+            <img alt="NutriLabel Logo" class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_fPOV1OtzSp69YjMktur_FoZP3Qdl7RJupCxgYlB8r0EXdRNHOuoZtwThQ45mRF58E8-zXfZbZug6OEtCp16W9F4XnY43ZBulwHo1BSoEjqSa917WxR_-YrMBIMTnvEd0ud1IOxYGuIWmK7C8mu1VV8nGTHQgomOYfWkGKckWpwLs2LkaX_utAZDlSCrckWQ3K7hW1L_fbCRGd3PyD4M8f7Nyn4oH3PY_gTADPGHyu4UsDE3C-6U9JA">
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold group-hover:text-secondary transition-colors">NutriLabel</span>
+            </div>
+          </a>
+        </div>
+        <!-- Desktop navigation (xl and up). href targets are the section ids in this page. -->
+        <nav id="primary-nav" aria-label="Primary"
+          class="hidden xl:flex items-center gap-space-xs p-1 bg-surface-container-low rounded-xl"
+          data-active-classes="bg-primary-container text-on-primary font-semibold">
+          <a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="how-it-works" href="#how-it-works">How It Works</a>
+          <a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="features" href="#features">Features</a>
+          <a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="technology" href="#architecture-section">Technology</a>
+          <a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="about-the-project" href="#about-the-project">About</a>
+        </nav>
+        <div class="flex items-center gap-space-sm sm:gap-space-md">
+          <a class="hidden sm:inline-flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-secondary bg-surface-container hover:bg-surface-container-high hover:text-on-surface transition-colors shadow-[0_1px_4px_rgba(9,46,37,0.04)]"
+            data-path="view-architecture" href="#architecture-section">View Architecture</a>
+          <a class="inline-flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-primary bg-primary hover:bg-secondary hover:text-on-secondary transition-all shadow-[0_2px_8px_-2px_rgba(9,46,37,0.25)]"
+            data-path="interactive-demo" href="#simulator-section">Try Interactive Demo</a>
+          <!-- Compact menu toggle (below xl, where the desktop tabs are hidden) -->
+          <button id="mobile-menu-toggle" type="button"
+            class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary bg-surface-container hover:bg-surface-container-high transition-colors"
+            aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="material-symbols-outlined text-[22px]">menu</span>
+          </button>
+        </div>
+      </div>
+      <!-- Compact navigation menu (below xl) -->
+      <div id="mobile-menu" class="hidden xl:hidden pb-space-md">
+        <nav aria-label="Mobile" class="flex flex-col gap-space-xs p-1 bg-surface-container-low rounded-xl">
+          <a class="block px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="how-it-works" href="#how-it-works">How It Works</a>
+          <a class="block px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="features" href="#features">Features</a>
+          <a class="block px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="technology" href="#architecture-section">Technology</a>
+          <a class="block px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="about-the-project" href="#about-the-project">About</a>
+          <a class="block px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="interactive-demo" href="#simulator-section">Interactive Demo</a>
+          <a class="block px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="view-architecture" href="#architecture-section">View Architecture</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-20 bg-background min-h-screen">
+    <div class="flex flex-col w-full">
+      <!-- SECTION 1: HERO SECTION -->
+      <section id="overview"
+        class="relative w-full bg-gradient-to-b from-primary-container via-primary to-primary-container text-on-primary py-space-xl overflow-hidden shadow-xl">
+        <!-- Subtle algorithmic line matrix overlay -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none"
+          style="background-image: repeating-linear-gradient(90deg, currentColor 0, currentColor 1px, transparent 1px, transparent 12px), repeating-linear-gradient(0deg, currentColor 0, currentColor 1px, transparent 1px, transparent 40px);">
+        </div>
+        <div
+          class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-secondary-fixed-dim/20 blur-3xl pointer-events-none">
+        </div>
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Left Column: Pitch & Academic Context -->
+            <div class="lg:col-span-7 flex flex-col gap-space-md">
+              <h1
+                class="font-display-lg text-headline-lg lg:text-display-lg text-surface-bright tracking-tight leading-tight">
+                The label tells you what’s inside.<br>
+                <span class="text-secondary-fixed">NutriLabel</span> helps you understand what it means for you.
+              </h1>
+              <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl leading-relaxed">
+                Scan packaged food. Understand its ingredients. Compare biochemical values with your personalized
+                dietary goals, and crowdsource verification when data is missing or deceptive.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+                <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-lg font-label-md text-label-md text-primary bg-secondary-container hover:bg-secondary-fixed font-bold transition-all shadow-md"
+                  href="#simulator-section">
+                  <span class="material-symbols-outlined text-[18px]">phone_android</span>
+                  Explore Interactive Demo
+                </a>
+                <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-lg font-label-md text-label-md text-surface-bright bg-surface-container-highest/20 hover:bg-surface-container-highest/30 transition-all"
+                  href="#architecture-section">
+                  <span class="material-symbols-outlined text-[18px]">schema</span>
+                  View System Architecture
+                </a>
+              </div>
+              <!-- Trust & Provenance Badges -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-lg">
+                <div class="p-space-sm rounded-lg bg-surface-container-highest/10 flex flex-col gap-1">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[20px]">database</span>
+                  <span class="font-label-sm text-label-sm text-surface-variant">Open Food Facts API</span>
+                  <span class="font-data-mono text-body-sm text-secondary-fixed-dim">Indexed Core Source</span>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-highest/10 flex flex-col gap-1">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[20px]">rule</span>
+                  <span class="font-label-sm text-label-sm text-surface-variant">Deterministic Rules</span>
+                  <span class="font-data-mono text-body-sm text-secondary-fixed-dim">Zero Blackbox Bias</span>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-highest/10 flex flex-col gap-1">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[20px]">psychology</span>
+                  <span class="font-label-sm text-label-sm text-surface-variant">Grok API Reasoning</span>
+                  <span class="font-data-mono text-body-sm text-secondary-fixed-dim">Strict Fact Grounding</span>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-highest/10 flex flex-col gap-1">
+                  <span class="material-symbols-outlined text-secondary-fixed text-[20px]">verified_user</span>
+                  <span class="font-label-sm text-label-sm text-surface-variant">Community Pipeline</span>
+                  <span class="font-data-mono text-body-sm text-secondary-fixed-dim">Postgres Audit Trail</span>
+                </div>
+              </div>
+            </div>
+            <!-- Right Column: Interactive Scan Card Sample -->
+            <div class="lg:col-span-5 flex justify-center">
+              <div
+                class="w-full max-w-md rounded-xl bg-surface-container-lowest text-on-surface p-space-md shadow-2xl relative">
+                <div class="flex items-center justify-between pb-space-sm">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-secondary text-[22px]">document_scanner</span>
+                    <span class="font-data-mono text-label-sm text-secondary">EAN-13: 8901030829141</span>
+                  </div>
+                  <span
+                    class="px-space-sm py-0.5 rounded bg-surface-container text-secondary font-data-mono text-label-sm">LIVE
+                    EVAL</span>
+                </div>
+                <!-- Product Header inside card -->
+                <div class="flex gap-space-md py-space-sm items-center">
+                  <div class="w-16 h-16 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-secondary text-[36px]">bakery_dining</span>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Demo
+                      Product</div>
+                    <h3 class="font-headline-sm text-headline-sm text-primary truncate">Wholegrain Oat Biscuits</h3>
+                    <div class="font-body-sm text-body-sm text-on-surface-variant">Britannia NutriChoice Specimen</div>
+                  </div>
+                </div>
+                <!-- Personalized Alert Callout -->
+                <div
+                  class="my-space-sm p-space-sm rounded-lg bg-error-container text-on-error-container flex items-start gap-space-sm">
+                  <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">warning</span>
+                  <div>
+                    <div class="font-label-md text-label-md font-semibold text-error">Sugar Alert: Exceeds Target</div>
+                    <div class="font-body-sm text-body-sm">Contains 18.2g sugars per 100g. Your current profile
+                      threshold is set to ≤ 10g/100g.</div>
+                  </div>
+                </div>
+                <!-- Macro Breakdown Mini Bars -->
+                <div class="space-y-space-xs py-space-xs">
+                  <div class="flex justify-between font-label-sm text-label-sm">
+                    <span class="text-on-surface-variant">Dietary Compatibility Score</span>
+                    <span class="font-data-mono text-primary font-bold">58 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                    <div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 58%"></div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 pt-space-xs text-center">
+                    <div class="p-2 rounded bg-surface-container-low">
+                      <div class="font-data-mono text-body-sm font-bold text-primary">18.2g</div>
+                      <div class="font-label-sm text-label-sm text-error">Sugar (High)</div>
+                    </div>
+                    <div class="p-2 rounded bg-surface-container-low">
+                      <div class="font-data-mono text-body-sm font-bold text-primary">0.42g</div>
+                      <div class="font-label-sm text-label-sm text-secondary">Sodium (Low)</div>
+                    </div>
+                    <div class="p-2 rounded bg-surface-container-low">
+                      <div class="font-data-mono text-body-sm font-bold text-primary">8.5g</div>
+                      <div class="font-label-sm text-label-sm text-on-surface-variant">Protein (Med)</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Grok Plain-Language Explanation snippet -->
+                <div class="mt-space-sm p-space-sm rounded-lg bg-surface-container-high text-on-surface">
+                  <div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary pb-1">
+                    <span class="material-symbols-outlined text-[16px]">neurology</span>
+                    <span class="">Grok Synthesized Reasoning</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “Marketed with whole oats, but inverted sugar syrup and maltodextrin account for approximately 18%
+                    of mass. Recommended as an occasional snack rather than a daily high-fiber staple.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2: THE PROBLEM -->
+      <section id="problem" class="w-full bg-surface text-on-surface py-space-xl">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span
+              class="px-space-md py-1 rounded-full bg-surface-container text-secondary font-data-mono text-label-sm tracking-wide uppercase">The
+              Information Asymmetry</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary mt-space-xs">Reading a food label shouldn’t
+              require a biochemistry degree.</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm">Front-of-pack claims are designed
+              to market. Regulatory tables are designed to comply. Neither is designed for individual human clarity.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            <!-- Card 1: Deceptive Claims with interactive mini toggle -->
+            <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-space-md">
+                  <span class="material-symbols-outlined text-[28px]">campaign</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-space-xs">Deceptive Front-of-Pack Claims
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+                  Products proudly tout “Zero Added Sugar” or “Source of Fiber” while masking maltodextrin, high sodium,
+                  or saturated palm oils in the fine print.
+                </p>
+              </div>
+              <div class="p-space-sm rounded-lg bg-surface-container-low">
+                <div class="flex items-center justify-between pb-2 font-label-sm text-label-sm">
+                  <span class="text-on-surface-variant font-semibold">Interactive Deception Check</span>
+                  <button
+                    class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm hover:bg-secondary transition-colors"
+                    data-state="front" onclick="toggleMarketingDemo(this)">Show Back Panel</button>
+                </div>
+                <div class="p-space-sm rounded bg-surface-container text-on-surface font-body-sm text-body-sm"
+                  id="marketing-demo-box">
+                  <span class="font-bold text-secondary">Front Claim:</span> “High Protein 15g • No Added Refined Sugar”
+                </div>
+              </div>
+            </div>
+            <!-- Card 2: Cryptic Additives -->
+            <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-space-md">
+                  <span class="material-symbols-outlined text-[28px]">science</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-space-xs">Cryptic Additives &amp; E-Numbers
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+                  Codes like INS 500(ii), INS 450(i), and Acidity Regulator 330 disguise chemical preservation
+                  techniques that confuse consumers managing allergies or gut sensitivities.
+                </p>
+              </div>
+              <div class="space-y-1.5 p-space-sm rounded-lg bg-surface-container-low font-data-mono text-body-sm">
+                <div class="flex justify-between items-center bg-surface-container px-2 py-1 rounded">
+                  <span class="text-on-surface">INS 450(i)</span>
+                  <span class="text-error font-semibold">Disodium Diphosphate</span>
+                </div>
+                <div class="flex justify-between items-center bg-surface-container px-2 py-1 rounded">
+                  <span class="text-on-surface">INS 500(ii)</span>
+                  <span class="text-secondary font-semibold">Sodium Bicarbonate</span>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3: One Size Fits None -->
+            <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-space-md">
+                  <span class="material-symbols-outlined text-[28px]">person_off</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-space-xs">One-Size-Fits-None Reference DV%
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+                  Daily percentage values reflect an arbitrary 2,000 kcal standard. A diabetic patient, a renal health
+                  tracker, and an endurance athlete require fundamentally different ratios.
+                </p>
+              </div>
+              <div class="p-space-sm rounded-lg bg-surface-container-low text-on-surface">
+                <div class="font-label-sm text-label-sm font-semibold pb-1">NutriLabel Dynamic Scaling:</div>
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Calculates thresholds against your
+                    exact personal tolerance matrix.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 3: THE SOLUTION WORKFLOW -->
+      <section id="how-it-works" class="w-full bg-surface-container-low text-on-surface py-space-xl">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin">
+          <div class="max-w-2xl mb-space-lg">
+            <span
+              class="px-space-md py-1 rounded-full bg-surface text-secondary font-data-mono text-label-sm tracking-wide uppercase">Pipeline
+              Architecture</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary mt-space-xs">From barcode to better-informed
+              decisions.</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">An end-to-end pipeline uniting
+              optical extraction, Open Food Facts caching, deterministic Java business logic, and grounded Grok AI
+              reasoning.</p>
+          </div>
+          <!-- 6-step responsive visual pipeline -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-space-md">
+            <!-- Step 1 -->
+            <div
+              class="cursor-pointer group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all shadow-sm flex flex-col justify-between"
+              onclick="jumpToSimulatorScreen(2)">
+              <div>
+                <div class="font-data-mono text-headline-sm text-secondary font-bold mb-space-xs">01</div>
+                <div
+                  class="font-headline-sm text-headline-sm text-primary mb-space-xs group-hover:text-secondary transition-colors">
+                  Set Goals</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Dietary restrictions, allergens, and
+                  micronutrient boundaries saved locally.</p>
+              </div>
+              <div class="pt-space-md flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+                <span class="">Test Screen 2</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div
+              class="cursor-pointer group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all shadow-sm flex flex-col justify-between"
+              onclick="jumpToSimulatorScreen(5)">
+              <div>
+                <div class="font-data-mono text-headline-sm text-secondary font-bold mb-space-xs">02</div>
+                <div
+                  class="font-headline-sm text-headline-sm text-primary mb-space-xs group-hover:text-secondary transition-colors">
+                  Scan Barcode</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">CameraX + Google ML Kit barcode detection
+                  with instant bounding.</p>
+              </div>
+              <div class="pt-space-md flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+                <span class="">Test Screen 5</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div
+              class="cursor-pointer group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all shadow-sm flex flex-col justify-between"
+              onclick="jumpToSimulatorScreen(6)">
+              <div>
+                <div class="font-data-mono text-headline-sm text-secondary font-bold mb-space-xs">03</div>
+                <div
+                  class="font-headline-sm text-headline-sm text-primary mb-space-xs group-hover:text-secondary transition-colors">
+                  Retrieve Data</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Open Food Facts REST lookup with PostgreSQL
+                  local caching cache-hit.</p>
+              </div>
+              <div class="pt-space-md flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+                <span class="">View Result</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div
+              class="cursor-pointer group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all shadow-sm flex flex-col justify-between"
+              onclick="jumpToSimulatorScreen(6)">
+              <div>
+                <div class="font-data-mono text-headline-sm text-secondary font-bold mb-space-xs">04</div>
+                <div
+                  class="font-headline-sm text-headline-sm text-primary mb-space-xs group-hover:text-secondary transition-colors">
+                  Evaluate &amp; Explain</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Deterministic thresholds evaluated in Java;
+                  Grok AI generates plain-language trace.</p>
+              </div>
+              <div class="pt-space-md flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+                <span class="">Rule Output</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </div>
+            </div>
+            <!-- Step 5 -->
+            <div
+              class="cursor-pointer group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all shadow-sm flex flex-col justify-between"
+              onclick="jumpToSimulatorScreen(9)">
+              <div>
+                <div class="font-data-mono text-headline-sm text-secondary font-bold mb-space-xs">05</div>
+                <div
+                  class="font-headline-sm text-headline-sm text-primary mb-space-xs group-hover:text-secondary transition-colors">
+                  OCR Extraction</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Capture packaging photos. ML Kit extracts
+                  fields for user verification.</p>
+              </div>
+              <div class="pt-space-md flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+                <span class="">Try OCR Flow</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </div>
+            </div>
+            <!-- Step 6 -->
+            <div
+              class="cursor-pointer group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all shadow-sm flex flex-col justify-between"
+              onclick="jumpToSimulatorScreen(10)">
+              <div>
+                <div class="font-data-mono text-headline-sm text-secondary font-bold mb-space-xs">06</div>
+                <div
+                  class="font-headline-sm text-headline-sm text-primary mb-space-xs group-hover:text-secondary transition-colors">
+                  Community Verify</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Peer review queue in PostgreSQL validates
+                  community contributions.</p>
+              </div>
+              <div class="pt-space-md flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+                <span class="">Audit Queue</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 4: CENTERPIECE — THE INTERACTIVE ANDROID SIMULATOR (13 SCREENS) -->
+      <section class="w-full bg-surface text-on-surface py-space-xl" id="simulator-section">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin">
+          <!-- Section Title & Simulator Controller Bar -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+            <div>
+              <span
+                class="px-space-md py-1 rounded-full bg-surface-container text-secondary font-data-mono text-label-sm tracking-wide uppercase">Interactive
+                Android Prototype</span>
+              <h2 class="font-headline-lg text-headline-lg text-primary mt-space-xs">The NutriLabel Mobile Experience
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Explore all 13 interactive prototype
+                screens. Test real user journeys from scanning to community verification.</p>
+            </div>
+            <!-- Scenario Quick Switchers -->
+            <div class="flex flex-wrap items-center gap-space-xs bg-surface-container-low p-1.5 rounded-xl">
+              <button
+                class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm bg-primary text-on-primary font-semibold transition-all"
+                id="scen-btn-available" onclick="setScenario('available')">Scenario: Standard Product</button>
+              <button
+                class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-all"
+                id="scen-btn-missing" onclick="setScenario('missing')">Missing Fields</button>
+              <button
+                class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-all"
+                id="scen-btn-unknown" onclick="setScenario('unknown')">Unrecognized Barcode</button>
+              <button class="px-2 py-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors"
+                onclick="resetPrototype()" title="Reset Prototype State">
+                <span class="material-symbols-outlined text-[18px]">restart_alt</span>
+              </button>
+            </div>
+          </div>
+          <!-- Simulator Layout Frame -->
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl items-start">
+            <!-- Left: Quick Screen Navigator (for Pitch Demonstrators) -->
+            <div class="xl:col-span-4 bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-md">
+              <div class="flex items-center justify-between pb-space-xs">
+                <h3 class="font-headline-sm text-headline-sm text-primary">Screen Index</h3>
+                <span class="font-data-mono text-label-sm text-secondary" id="active-screen-indicator">Screen 1 /
+                  13</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Click any module below or interact directly
+                with the Android device to navigate seamlessly.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-1.5 max-h-[520px] overflow-y-auto pr-1"
+                id="screen-nav-list">
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between bg-primary text-on-primary"
+                  data-screen="1" onclick="jumpToSimulatorScreen(1)">
+                  <span class="">01. Welcome &amp; Introduction</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="2" onclick="jumpToSimulatorScreen(2)">
+                  <span class="">02. Dietary Preferences</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="3" onclick="jumpToSimulatorScreen(3)">
+                  <span class="">03. Personal Profile &amp; Goals</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="4" onclick="jumpToSimulatorScreen(4)">
+                  <span class="">04. Home Dashboard</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="5" onclick="jumpToSimulatorScreen(5)">
+                  <span class="">05. Barcode Scanner (CameraX)</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="6" onclick="jumpToSimulatorScreen(6)">
+                  <span class="">06. Product Analysis Result</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="7" onclick="jumpToSimulatorScreen(7)">
+                  <span class="">07. Ingredient Explorer</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="8" onclick="jumpToSimulatorScreen(8)">
+                  <span class="">08. Product Missing / Unfound</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="9" onclick="jumpToSimulatorScreen(9)">
+                  <span class="">09. Add Product &amp; OCR Review</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="10" onclick="jumpToSimulatorScreen(10)">
+                  <span class="">10. Contributor Verification Queue</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="11" onclick="jumpToSimulatorScreen(11)">
+                  <span class="">11. Product Comparison</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="12" onclick="jumpToSimulatorScreen(12)">
+                  <span class="">12. Profile &amp; Preferences</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <button
+                  class="screen-nav-btn text-left px-3 py-2 rounded-lg font-label-sm text-label-sm flex items-center justify-between hover:bg-surface-container text-on-surface"
+                  data-screen="13" onclick="jumpToSimulatorScreen(13)">
+                  <span class="">13. Education &amp; Label Literacy</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+              </div>
+              <!-- Academic Callout Note -->
+              <div class="p-space-sm rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm">
+                <span class="font-semibold text-primary">Academic Prototype:</span> All 13 Android Jetpack Compose view
+                specifications are implemented here in synchronized interactive JS state.
+              </div>
+            </div>
+            <!-- Center: Android Device Canvas -->
+            <div class="xl:col-span-8 flex justify-center">
+              <!-- Physical Device Frame -->
+              <div class="w-full max-w-[420px] bg-primary rounded-[3rem] p-3.5 shadow-2xl relative select-none">
+                <!-- Outer bezel styling -->
+                <div
+                  class="w-full bg-background rounded-[2.5rem] overflow-hidden flex flex-col relative h-[780px] shadow-inner">
+                  <!-- Android Status Bar -->
+                  <div
+                    class="h-8 bg-surface-container-high/90 text-on-surface flex items-center justify-between px-6 shrink-0 z-30 font-data-mono text-label-sm">
+                    <span class="">09:41</span>
+                    <!-- Camera Punch Hole -->
+                    <div class="w-4 h-4 rounded-full bg-primary mx-auto"></div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+                      <span class="material-symbols-outlined text-[14px]">wifi</span>
+                      <span class="material-symbols-outlined text-[14px]">battery_full</span>
+                    </div>
+                  </div>
+                  <!-- Main Simulated Device Viewport -->
+                  <div class="flex-1 overflow-y-auto relative bg-surface flex flex-col" id="phone-screen-container">
+                    <!-- Screens 1–13 are loaded from /screens/*.html by assets/js/simulator/screen-loader.js -->
+                    <div id="screens-status"
+                      class="flex-1 flex flex-col items-center justify-center gap-space-sm p-space-lg text-center text-on-surface-variant"
+                      role="status" aria-live="polite">
+                      <div
+                        class="w-8 h-8 rounded-full border-4 border-secondary-container border-t-transparent animate-spin">
+                      </div>
+                      <p class="font-body-sm text-body-sm">Loading app screens…</p>
+                    </div>
+                  </div>
+                  <!-- Android Bottom Navigation Bar -->
+                  <div
+                    class="h-16 bg-surface-container-lowest border-t-0 flex items-center justify-around px-2 shrink-0 z-30">
+                    <button class="flex flex-col items-center text-primary group" id="bnav-home"
+                      onclick="jumpToSimulatorScreen(4)">
+                      <span class="material-symbols-outlined text-[20px]">home</span>
+                      <span class="font-label-sm text-[10px]">Home</span>
+                    </button>
+                    <button class="flex flex-col items-center text-on-surface-variant group" id="bnav-scan"
+                      onclick="jumpToSimulatorScreen(5)">
+                      <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+                      <span class="font-label-sm text-[10px]">Scanner</span>
+                    </button>
+                    <button class="flex flex-col items-center text-on-surface-variant group" id="bnav-queue"
+                      onclick="jumpToSimulatorScreen(10)">
+                      <span class="material-symbols-outlined text-[20px]">rate_review</span>
+                      <span class="font-label-sm text-[10px]">Community</span>
+                    </button>
+                    <button class="flex flex-col items-center text-on-surface-variant group" id="bnav-profile"
+                      onclick="jumpToSimulatorScreen(12)">
+                      <span class="material-symbols-outlined text-[20px]">person</span>
+                      <span class="font-label-sm text-[10px]">Profile</span>
+                    </button>
+                  </div>
+                  <!-- Android System Navigation Pill Gesture Bar -->
+                  <div class="h-4 bg-surface-container-lowest flex items-center justify-center shrink-0">
+                    <div class="w-32 h-1 bg-on-surface/30 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 5: FEATURE SHOWCASE -->
+      <section id="features" class="w-full bg-surface-container-low text-on-surface py-space-xl">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span
+              class="px-space-md py-1 rounded-full bg-surface text-secondary font-data-mono text-label-sm tracking-wide uppercase">Core
+              Capabilities</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary mt-space-xs">Engineered for Transparency &amp;
+              Rigor</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">Eliminating opaque nutrition
+              algorithms through strict audit trails and grounded synthesis.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+            <!-- Feature 1 -->
+            <div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+              <div class="w-12 h-12 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[26px]">tune</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary">Deterministic Rules Engine</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Nutritional thresholds for sugars, sodium, and trans fats are computed deterministically in Java,
+                guaranteeing repeatable, explainable outputs without statistical hallucination.
+              </p>
+              <div class="font-data-mono text-body-sm text-secondary">Evaluated in &lt; 4ms per query</div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+              <div class="w-12 h-12 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[26px]">psychology</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary">Grounded Grok Explanations</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                The xAI Grok API synthesizes verified JSON payload fields into plain language. It is strictly
+                constrained to the payload—it never extrapolates unverified values.
+              </p>
+              <div class="font-data-mono text-body-sm text-secondary">Payload Constraint Verified</div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+              <div class="w-12 h-12 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[26px]">document_scanner</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary">CameraX &amp; ML Kit OCR</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                On-device barcode and optical character recognition extracts nutrition labels directly on the client,
+                minimizing latency and supporting partial offline processing.
+              </p>
+              <div class="font-data-mono text-body-sm text-secondary">99.2% Barcode Read Accuracy</div>
+            </div>
+            <!-- Feature 4 -->
+            <div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+              <div class="w-12 h-12 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[26px]">groups</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary">Community Verification Protocol</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                When users photograph unindexed or missing foods, peer reviewers audit the original label photograph
+                against OCR extractions in PostgreSQL before indexing.
+              </p>
+              <div class="font-data-mono text-body-sm text-secondary">Multi-tier Peer Consensus</div>
+            </div>
+            <!-- Feature 5 -->
+            <div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+              <div class="w-12 h-12 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[26px]">compare</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary">Contextual Comparison</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Directly benchmark alternative products in the same grocery aisle. Identify healthier substitutes
+                tailored specifically to your active medical or dietary constraints.
+              </p>
+              <div class="font-data-mono text-body-sm text-secondary">Side-by-Side Delta Metrics</div>
+            </div>
+            <!-- Feature 6 -->
+            <div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+              <div class="w-12 h-12 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[26px]">database</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary">Open Food Facts Synchronization</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Seamlessly taps into over 3,000,000 international food products via Open Food Facts v2 REST API,
+                augmenting global commons rather than siloing nutritional knowledge.
+              </p>
+              <div class="font-data-mono text-body-sm text-secondary">Open Database License (ODbL)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 6: TECHNOLOGY ARCHITECTURE -->
+      <section class="w-full bg-primary text-on-primary py-space-xl relative overflow-hidden" id="architecture-section">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin relative z-10">
+          <div class="max-w-3xl mb-space-lg">
+            <span
+              class="px-space-md py-1 rounded-full bg-surface-container-highest/20 text-secondary-fixed font-data-mono text-label-sm tracking-wide uppercase">System
+              Blueprint</span>
+            <h2 class="font-headline-lg text-headline-lg text-surface-bright mt-space-xs">Technical Tier Architecture
+            </h2>
+            <p class="font-body-lg text-body-lg text-surface-variant mt-1">Multi-tier decoupling ensuring
+              high-throughput barcode resolution and reliable offline-first fallback.</p>
+          </div>
+          <!-- Architectural Tiers Diagram Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-space-md">
+            <!-- Client Tier -->
+            <div class="p-space-md rounded-xl bg-surface-container-highest/10 space-y-space-sm">
+              <div class="flex items-center gap-space-xs text-secondary-fixed">
+                <span class="material-symbols-outlined text-[24px]">smartphone</span>
+                <span class="font-label-md text-label-md font-bold uppercase tracking-wider">Client Tier</span>
+              </div>
+              <div class="space-y-2 font-body-sm text-body-sm text-surface-variant">
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Kotlin &amp; Jetpack Compose</div>
+                  <div class="">Reactive declarative Android UI</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">CameraX &amp; ML Kit</div>
+                  <div class="">Low-latency frame scanning &amp; OCR</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Room Database</div>
+                  <div class="">Local profile &amp; scan cache</div>
+                </div>
+              </div>
+            </div>
+            <!-- Backend Tier -->
+            <div class="p-space-md rounded-xl bg-surface-container-highest/10 space-y-space-sm">
+              <div class="flex items-center gap-space-xs text-secondary-fixed">
+                <span class="material-symbols-outlined text-[24px]">terminal</span>
+                <span class="font-label-md text-label-md font-bold uppercase tracking-wider">Backend Service</span>
+              </div>
+              <div class="space-y-2 font-body-sm text-body-sm text-surface-variant">
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Spring Boot 3 (Java 21)</div>
+                  <div class="">REST Controllers &amp; Security</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Deterministic Rules Engine</div>
+                  <div class="">Evaluates sugars, sodium &amp; allergens</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Spring Data JPA / Hibernate</div>
+                  <div class="">Relational ORM data mapping</div>
+                </div>
+              </div>
+            </div>
+            <!-- Data & Cache Tier -->
+            <div class="p-space-md rounded-xl bg-surface-container-highest/10 space-y-space-sm">
+              <div class="flex items-center gap-space-xs text-secondary-fixed">
+                <span class="material-symbols-outlined text-[24px]">storage</span>
+                <span class="font-label-md text-label-md font-bold uppercase tracking-wider">Data Persistence</span>
+              </div>
+              <div class="space-y-2 font-body-sm text-body-sm text-surface-variant">
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">PostgreSQL 16</div>
+                  <div class="">User profiles, OCR review audit queue</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Redis L2 Cache</div>
+                  <div class="">EAN barcode response cache (TTL 7d)</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Audit Logs</div>
+                  <div class="">Cryptographic checksums of submissions</div>
+                </div>
+              </div>
+            </div>
+            <!-- External AI & APIs -->
+            <div class="p-space-md rounded-xl bg-surface-container-highest/10 space-y-space-sm">
+              <div class="flex items-center gap-space-xs text-secondary-fixed">
+                <span class="material-symbols-outlined text-[24px]">cloud_sync</span>
+                <span class="font-label-md text-label-md font-bold uppercase tracking-wider">External APIs</span>
+              </div>
+              <div class="space-y-2 font-body-sm text-body-sm text-surface-variant">
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Open Food Facts v2</div>
+                  <div class="">Global crowdsourced nutritional DB</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">xAI Grok API</div>
+                  <div class="">Grounded explanation synthesis</div>
+                </div>
+                <div class="p-2 rounded bg-surface-container-highest/10">
+                  <div class="font-bold text-surface-bright">Strict JSON Schema</div>
+                  <div class="">Zero hallucination enforcement</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Request Flow ASCII / Micro Flow Chart -->
+          <div
+            class="mt-space-lg p-space-md rounded-xl bg-surface-container-highest/5 text-surface-bright font-data-mono text-body-sm overflow-x-auto">
+            <div class="text-secondary-fixed font-bold mb-2">SCAN REQUEST EXECUTION FLOW:</div>
+            <div class="whitespace-pre text-surface-variant">
+              [Android Client] ──(CameraX Barcode)──&gt; [Spring Boot Backend] ──(Cache Check)──&gt; [Redis L2 Cache]
+              │
+              (Cache Miss / Refresh)
+              ▼
+              [Open Food Facts API]
+              │
+              (Normalized Nutrition JSON)
+              ▼
+              [Deterministic Rules Engine] (Evaluates personal thresholds)
+              │
+              (Evaluated Results + Schema)
+              ▼
+              [xAI Grok API] (Synthesizes explanation)
+              │
+              ▼
+              [Android Client View] &lt;──(Render Result: 46ms)── [PostgreSQL Cache Write]
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 7: RESPONSIBLE AI & DATA INTEGRITY -->
+      <section id="about-the-project" class="w-full bg-surface text-on-surface py-space-xl">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin">
+          <div class="max-w-3xl mb-space-lg">
+            <span
+              class="px-space-md py-1 rounded-full bg-surface-container text-secondary font-data-mono text-label-sm tracking-wide uppercase">Engineering
+              Guardrails</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary mt-space-xs">Responsible AI &amp; Data Integrity
+              Principles</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Foundational design standards preventing
+              misleading claims and algorithmic biases.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">not_interested</span>
+              </div>
+              <h4 class="font-label-md text-label-md font-bold text-primary">Missing ≠ Zero</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">If sugar or sodium values are absent from
+                packaging data, NutriLabel flags them as “Unavailable” rather than assuming zero.</p>
+            </div>
+            <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">lock_clock</span>
+              </div>
+              <h4 class="font-label-md text-label-md font-bold text-primary">Strict Fact Grounding</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">The Grok API prompt template prohibits
+                extrapolating values not explicitly present in the input JSON payload.</p>
+            </div>
+            <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">health_and_safety</span>
+              </div>
+              <h4 class="font-label-md text-label-md font-bold text-primary">Non-Clinical Disclaimer</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Clear architectural boundary: educational
+                decision-support only. Does not replace prescribed medical diets.</p>
+            </div>
+            <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-2">
+              <div class="w-10 h-10 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">shield_person</span>
+              </div>
+              <h4 class="font-label-md text-label-md font-bold text-primary">On-Device Profile Caching</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Personal health goals and allergen
+                vulnerabilities remain cached securely in local client SQLite/Room storage.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 8: PROJECT ROADMAP & ACADEMIC CONTEXT -->
+      <section id="roadmap" class="w-full bg-surface-container-low text-on-surface py-space-xl">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+            <div>
+              <span
+                class="px-space-md py-1 rounded-full bg-surface text-secondary font-data-mono text-label-sm tracking-wide uppercase">Academic
+                Milestones</span>
+              <h2 class="font-headline-lg text-headline-lg text-primary mt-space-xs">Engineering Roadmap</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Semester III Research Initiative •
+                Course 25CPD37 (Sep – Dec 2026)</p>
+            </div>
+            <div class="font-data-mono text-label-sm text-secondary bg-surface px-3 py-1.5 rounded-lg">
+              CURRENT SPRINT: MILESTONE 2</div>
+          </div>
+          <!-- Roadmap Timeline Bar -->
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-space-sm">
+            <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm space-y-1">
+              <span
+                class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-data-mono text-label-sm">M1
+                • COMPLETE</span>
+              <div class="font-label-md text-label-md font-bold text-primary">Problem Definition</div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Literature review on packaging confusion and
+                Open Food Facts schema analysis.</p>
+            </div>
+            <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm space-y-1">
+              <span
+                class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-data-mono text-label-sm">NEXT
+                CHECKPOINT</span>
+              <div class="font-label-md text-label-md font-bold text-primary">Client Scanner</div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">CameraX &amp; ML Kit integration with
+                real-time bounding reticle.</p>
+            </div>
+            <div class="p-space-sm rounded-xl bg-surface-container-highest/40 shadow-sm space-y-1">
+              <span class="px-2 py-0.5 rounded bg-primary text-on-primary font-data-mono text-label-sm">M3 •
+                QUEUED</span>
+              <div class="font-label-md text-label-md font-bold text-primary">Deterministic Engine</div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Spring Boot service + Grok grounded prompt
+                pipeline implementation.</p>
+            </div>
+            <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm space-y-1 opacity-70">
+              <span
+                class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-data-mono text-label-sm">M4
+                • QUEUED</span>
+              <div class="font-label-md text-label-md font-bold text-primary">OCR Pipeline</div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Multi-image OCR parsing for missing packaging
+                submissions.</p>
+            </div>
+            <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm space-y-1 opacity-70">
+              <span
+                class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-data-mono text-label-sm">M5
+                • QUEUED</span>
+              <div class="font-label-md text-label-md font-bold text-primary">Peer Verification</div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">PostgreSQL crowdsourced verification audit
+                queue &amp; reputation logic.</p>
+            </div>
+            <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm space-y-1 opacity-70">
+              <span
+                class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-data-mono text-label-sm">M6
+                • QUEUED</span>
+              <div class="font-label-md text-label-md font-bold text-primary">Campus Pilot</div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Field testing with 150 student grocery
+                shoppers across campus stores.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 9: CLOSING CALL TO ACTION -->
+      <section id="closing-cta"
+        class="w-full bg-gradient-to-r from-primary via-primary-container to-primary text-on-primary py-space-xl">
+        <div class="max-w-[1440px] mx-auto px-space-lg lg:px-margin text-center">
+          <h2 class="font-display-lg text-headline-lg lg:text-display-lg text-surface-bright font-bold">
+            Ready to see the food behind the claim?
+          </h2>
+          <p class="font-body-lg text-body-lg text-surface-variant mt-space-sm mb-space-lg leading-relaxed">
+            Test the complete simulated Android application right here in your browser, or explore the open architecture
+            and evaluation guidelines.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-space-md">
+            <a class="px-space-lg py-3 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold hover:bg-secondary-fixed transition-all shadow-lg"
+              href="#simulator-section">
+              Launch App Simulator
+            </a>
+            <a class="px-space-lg py-3 rounded-lg bg-surface-container-highest/20 text-surface-bright font-label-md text-label-md hover:bg-surface-container-highest/30 transition-all"
+              href="#architecture-section">
+              Inspect Architecture Logs
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- ============ FOOTER ============ -->
+  <footer class="w-full bg-surface-container-lowest text-on-surface py-space-xl">
+    <div class="w-full px-space-lg lg:px-margin mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-lg">
+        <div class="space-y-space-sm">
+          <div class="flex items-center gap-space-xs">
+            <img alt="NutriLabel Logo" class="h-7 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_fPOV1OtzSp69YjMktur_FoZP3Qdl7RJupCxgYlB8r0EXdRNHOuoZtwThQ45mRF58E8-zXfZbZug6OEtCp16W9F4XnY43ZBulwHo1BSoEjqSa917WxR_-YrMBIMTnvEd0ud1IOxYGuIWmK7C8mu1VV8nGTHQgomOYfWkGKckWpwLs2LkaX_utAZDlSCrckWQ3K7hW1L_fbCRGd3PyD4M8f7Nyn4oH3PY_gTADPGHyu4UsDE3C-6U9JA">
+            <span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">NutriLabel</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">AI-driven food label inspection
+            engine, bridging optical character extraction and biochemical transparency for safer dietary decisions.</p>
+        </div>
+        <div class="space-y-space-sm">
+          <div class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Data Attribution
+            &amp; Source</div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Nutritional parameters and
+            taxonomy references are cross-verified against the open collaborative database <span
+              class="font-medium text-on-surface">Open Food Facts</span> under the Open Database License (ODbL).</p>
+          <div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            <span class="">Open Food Facts Indexed API</span>
+          </div>
+        </div>
+        <div class="space-y-space-sm">
+          <div class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Academic Prototype
+            Disclaimer</div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Engineered purely as an academic
+            research prototype for educational and demonstrative intent. Diagnostic findings, biochemical breakdowns,
+            and Nutri-Scores do not constitute certified clinical dietary advice.</p>
+        </div>
+        <div class="space-y-space-sm">
+          <div class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Engineering &amp;
+            Credentials</div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Department of Computer Science and
+            Engineering<br>Semester III Research Consortium</p>
+          <div class="flex flex-col gap-space-xs pt-space-xs">
+            <a class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary hover:text-primary transition-colors"
+              data-path="engineering-contact" href="mailto:rajsharma837837@gmail.com">
+              <span class="material-symbols-outlined text-[16px]">mail</span>
+              <span class="">Engineering Contact:&nbsp;<br>rajsharma837837@gmail.com</span>
+            </a>
+            <a class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="view-architecture" href="#architecture-section">
+              <span class="material-symbols-outlined text-[16px]">terminal</span>
+              <span class="">System Blueprint &amp; Architecture Logs</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+        <div class="flex items-center gap-space-sm">
+          <span class="">© 2025 NutriLabel, Department of CSE</span>
+        </div>
+        <div class="flex items-center gap-space-lg font-data-mono text-data-mono text-on-surface-variant/80">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ============ SCRIPTS ============ -->
+  <script src="assets/js/simulator/state.js"></script>
+  <script src="assets/js/simulator/screen-navigation.js"></script>
+  <script src="assets/js/simulator/preferences.js"></script>
+  <script src="assets/js/simulator/scanner.js"></script>
+  <script src="assets/js/simulator/scenarios.js"></script>
+  <script src="assets/js/simulator/ingredients.js"></script>
+  <script src="assets/js/simulator/contribution.js"></script>
+  <script src="assets/js/landing/marketing-demo.js"></script>
+  <script src="assets/js/site/navigation.js"></script>
+  <script src="assets/js/generated/screens-bundle.js"></script>
+  <script src="assets/js/simulator/screen-loader.js"></script>
+</body>
+
+</html>

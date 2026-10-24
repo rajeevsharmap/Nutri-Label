@@ -1,0 +1,36 @@
+<!-- ============================================================
+     SCREEN 08 / 13 — PRODUCT MISSING SCREEN
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-8
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md flex-col justify-between h-full" id="sim-screen-8">
+  <div class="space-y-space-md pt-space-lg text-center">
+    <div class="w-16 h-16 rounded-full bg-surface-container-high text-primary flex items-center justify-center mx-auto">
+      <span class="material-symbols-outlined text-[36px]">search_off</span>
+    </div>
+    <div class="space-y-1">
+      <div class="font-data-mono text-label-sm text-secondary">LOOKUP EXHAUSTED</div>
+      <h3 class="font-headline-md text-headline-md text-primary font-bold">Product Not In Database</h3>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mx-auto">
+        Barcode <code class="font-data-mono font-bold text-primary">8901030000000</code> was not found in Open Food Facts or local cache.
+      </p>
+    </div>
+    <div class="p-space-sm rounded-xl bg-surface-container-low text-left space-y-1">
+      <div class="font-label-md text-label-md font-semibold text-primary">Why does this happen?</div>
+      <ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1 list-disc pl-4">
+        <li class="">Newly launched regional FMCG product</li>
+        <li class="">Packaging variation with localized EAN</li>
+        <li class="">Unindexed small-batch organic maker</li>
+      </ul>
+    </div>
+  </div>
+  <div class="space-y-space-xs">
+    <button class="w-full py-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-bold hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all shadow-md flex items-center justify-center gap-2" onclick="jumpToSimulatorScreen(9)">
+      <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+      <span class="">Add This Product via OCR</span>
+    </button>
+    <button class="w-full py-2.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="jumpToSimulatorScreen(5)">
+      Scan Another Product
+    </button>
+  </div>
+</div>

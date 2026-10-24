@@ -1,0 +1,65 @@
+<!-- ============================================================
+     SCREEN 09 / 13 — ADD PRODUCT & OCR REVIEW
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-9
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md space-y-space-md" id="sim-screen-9">
+  <div class="flex items-center justify-between">
+    <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(8)">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <span class="font-headline-sm text-headline-sm text-primary font-bold">Contribute via OCR</span>
+    <span class="w-6"></span>
+  </div>
+  <!-- 3 Image Slots -->
+  <div class="grid grid-cols-3 gap-2">
+    <div class="p-2 rounded-lg bg-surface-container text-center flex flex-col items-center justify-center h-20 text-secondary">
+      <span class="material-symbols-outlined text-[20px]">image</span>
+      <span class="font-label-sm text-label-sm mt-1">Front</span>
+      <span class="font-data-mono text-[9px] text-secondary">Captured</span>
+    </div>
+    <div class="p-2 rounded-lg bg-secondary-container text-center flex flex-col items-center justify-center h-20 text-on-secondary-container">
+      <span class="material-symbols-outlined text-[20px]">table_chart</span>
+      <span class="font-label-sm text-label-sm mt-1">Nutrition</span>
+      <span class="font-data-mono text-[9px]">98% OCR Conf</span>
+    </div>
+    <div class="p-2 rounded-lg bg-surface-container text-center flex flex-col items-center justify-center h-20 text-secondary">
+      <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+      <span class="font-label-sm text-label-sm mt-1">Ingredients</span>
+      <span class="font-data-mono text-[9px]">Captured</span>
+    </div>
+  </div>
+  <!-- OCR Extracted Fields (Editable) -->
+  <div class="space-y-space-xs">
+    <div class="flex items-center justify-between font-label-sm text-label-sm">
+      <span class="text-on-surface font-bold">Extracted Fields (Verify or Edit)</span>
+      <span class="text-secondary font-data-mono">ML Kit Extracted</span>
+    </div>
+    <div class="space-y-2">
+      <div>
+        <label class="font-label-sm text-label-sm text-on-surface-variant block pb-0.5">Product Title</label>
+        <input class="w-full px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-secondary" id="ocr-input-name" type="text" value="High-Protein Seed Energy Bar">
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div>
+          <label class="font-label-sm text-label-sm text-on-surface-variant block pb-0.5">Sugars (g/100g)</label>
+          <input class="w-full px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface font-data-mono text-body-sm outline-none focus:ring-1 focus:ring-secondary" id="ocr-input-sugar" type="number" value="6.5">
+        </div>
+        <div>
+          <label class="font-label-sm text-label-sm text-on-surface-variant block pb-0.5">Protein (g/100g)</label>
+          <input class="w-full px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface font-data-mono text-body-sm outline-none focus:ring-1 focus:ring-secondary" id="ocr-input-protein" type="number" value="22.0">
+        </div>
+      </div>
+      <div>
+        <label class="font-label-sm text-label-sm text-on-surface-variant block pb-0.5">Ingredients String</label>
+        <textarea class="w-full p-2 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-secondary" id="ocr-input-ing" rows="2">Pumpkin seeds, Chia seeds, Almonds, Pea protein isolate, Sea salt.</textarea>
+      </div>
+    </div>
+  </div>
+  <div class="p-2 rounded bg-surface-container text-on-surface-variant font-body-sm text-body-sm">
+    <strong>Notice:</strong> Submissions are cryptographically signed and queued for peer verification before database commit.
+  </div>
+  <button class="w-full py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-secondary transition-all" onclick="submitOcrContribution()">
+    Submit for Community Verification
+  </button>
+</div>

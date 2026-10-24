@@ -1,0 +1,43 @@
+<!-- ============================================================
+     SCREEN 02 / 13 — DIETARY PREFERENCES
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-2
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md flex-col justify-between h-full" id="sim-screen-2">
+  <div class="space-y-space-md">
+    <div class="flex items-center justify-between">
+      <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(1)">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <span class="font-data-mono text-label-sm text-on-surface-variant">Step 1 of 2</span>
+    </div>
+    <div>
+      <h3 class="font-headline-md text-headline-md text-primary">Dietary Choices</h3>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Select dietary standards and allergens you wish to highlight or flag.</p>
+    </div>
+    <!-- Diet Standard Chips -->
+    <div class="space-y-space-xs">
+      <span class="font-label-sm text-label-sm text-primary font-bold">Diet Type</span>
+      <div class="flex flex-wrap gap-1.5" id="diet-preference-chips">
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold transition-all" data-active="true" onclick="toggleChip(this)">Vegetarian</button>
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-all" data-active="false" onclick="toggleChip(this)">Vegan</button>
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-all" data-active="false" onclick="toggleChip(this)">Halal</button>
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-all" data-active="false" onclick="toggleChip(this)">Eggetarian</button>
+      </div>
+    </div>
+    <!-- Allergen Avoidance Chips -->
+    <div class="space-y-space-xs">
+      <span class="font-label-sm text-label-sm text-primary font-bold">Allergen Triggers to Avoid</span>
+      <div class="flex flex-wrap gap-1.5" id="allergen-preference-chips">
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold transition-all" data-active="true" onclick="toggleChip(this)">Gluten / Wheat</button>
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold transition-all" data-active="true" onclick="toggleChip(this)">Peanuts</button>
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-all" data-active="false" onclick="toggleChip(this)">Milk / Lactose</button>
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-all" data-active="false" onclick="toggleChip(this)">Soybeans</button>
+        <button class="pref-chip px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-all" data-active="false" onclick="toggleChip(this)">Tree Nuts</button>
+      </div>
+    </div>
+  </div>
+  <button class="w-full py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-secondary transition-all" onclick="jumpToSimulatorScreen(3)">
+    Continue to Profile
+  </button>
+</div>

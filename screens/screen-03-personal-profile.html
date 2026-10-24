@@ -1,0 +1,59 @@
+<!-- ============================================================
+     SCREEN 03 / 13 — PERSONAL PROFILE & GOALS
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-3
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md flex-col justify-between h-full" id="sim-screen-3">
+  <div class="space-y-space-md">
+    <div class="flex items-center justify-between">
+      <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(2)">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <span class="font-data-mono text-label-sm text-on-surface-variant">Step 2 of 2</span>
+    </div>
+    <div>
+      <h3 class="font-headline-md text-headline-md text-primary">Nutritional Goals</h3>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Calibrate rule thresholds for sodium, added sugars, and protein density.</p>
+    </div>
+    <div class="space-y-space-sm">
+      <div class="goal-card p-3 rounded-xl bg-surface-container-low cursor-pointer transition-all flex items-center justify-between" data-selected="false" onclick="selectGoal(this)">
+        <div class="flex items-center gap-space-sm">
+          <span class="material-symbols-outlined text-secondary">fitness_center</span>
+          <div>
+            <div class="font-label-md text-label-md font-bold text-primary">Fitness &amp; High Protein</div>
+            <div class="font-body-sm text-body-sm text-on-surface-variant">≥ 10g protein/100g, low sat fat</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline check-icon text-[20px]">radio_button_unchecked</span>
+      </div>
+      <div class="goal-card p-3 rounded-xl bg-secondary-container cursor-pointer transition-all flex items-center justify-between" data-selected="true" onclick="selectGoal(this)">
+        <div class="flex items-center gap-space-sm">
+          <span class="material-symbols-outlined text-secondary">water_drop</span>
+          <div>
+            <div class="font-label-md text-label-md font-bold text-primary">Sugar Monitoring</div>
+            <div class="font-body-sm text-body-sm text-on-surface-variant">≤ 10g sugars/100g threshold</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-secondary check-icon text-[20px]">check_circle</span>
+      </div>
+      <div class="goal-card p-3 rounded-xl bg-surface-container-low cursor-pointer transition-all flex items-center justify-between" data-selected="false" onclick="selectGoal(this)">
+        <div class="flex items-center gap-space-sm">
+          <span class="material-symbols-outlined text-secondary">favorite</span>
+          <div>
+            <div class="font-label-md text-label-md font-bold text-primary">Low Sodium (Hypertension)</div>
+            <div class="font-body-sm text-body-sm text-on-surface-variant">≤ 0.3g sodium/100g max</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline check-icon text-[20px]">radio_button_unchecked</span>
+      </div>
+    </div>
+    <!-- Medical Disclaimer -->
+    <div class="p-space-sm rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex gap-2 items-start">
+      <span class="material-symbols-outlined text-[18px] text-secondary shrink-0">info</span>
+      <span class="">NutriLabel calculates deterministic thresholds for educational support. It does not replace medical advice.</span>
+    </div>
+  </div>
+  <button class="w-full py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-secondary transition-all" onclick="jumpToSimulatorScreen(4)">
+    Save Profile &amp; Go to Home
+  </button>
+</div>

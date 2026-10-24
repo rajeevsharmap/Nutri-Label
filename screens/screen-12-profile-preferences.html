@@ -1,0 +1,54 @@
+<!-- ============================================================
+     SCREEN 12 / 13 — PROFILE & PREFERENCES
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-12
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md space-y-space-md" id="sim-screen-12">
+  <div class="flex items-center justify-between">
+    <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(4)">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <span class="font-headline-sm text-headline-sm text-primary font-bold">User Settings</span>
+    <span class="w-6"></span>
+  </div>
+  <div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+    <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-sm text-headline-sm font-bold">
+      A
+    </div>
+    <div>
+      <div class="font-label-md text-label-md font-bold text-primary">Alex Mercer</div>
+      <div class="font-data-mono text-body-sm text-on-surface-variant">Local Profile • No Cloud Sync</div>
+    </div>
+  </div>
+  <div class="space-y-space-sm">
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm space-y-2">
+      <div class="font-label-md text-label-md font-bold text-primary">Threshold Rules</div>
+      <div class="flex items-center justify-between font-body-sm text-body-sm">
+        <span class="text-on-surface-variant">Max Sugar Limit:</span>
+        <span class="font-data-mono font-bold text-primary">10.0g / 100g</span>
+      </div>
+      <div class="flex items-center justify-between font-body-sm text-body-sm">
+        <span class="text-on-surface-variant">Max Sodium Limit:</span>
+        <span class="font-data-mono font-bold text-primary">0.30g / 100g</span>
+      </div>
+      <div class="flex items-center justify-between font-body-sm text-body-sm">
+        <span class="text-on-surface-variant">Allergen Protection:</span>
+        <span class="font-data-mono font-bold text-error">Gluten, Peanuts</span>
+      </div>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm space-y-2">
+      <div class="font-label-md text-label-md font-bold text-primary">Data &amp; Privacy</div>
+      <div class="flex items-center justify-between font-body-sm text-body-sm">
+        <span class="text-on-surface-variant">Offline First Mode</span>
+        <span class="font-data-mono text-secondary font-bold">Enabled</span>
+      </div>
+      <div class="flex items-center justify-between font-body-sm text-body-sm">
+        <span class="text-on-surface-variant">Grok Synthesis Caching</span>
+        <span class="font-data-mono text-secondary font-bold">Strict Grounded</span>
+      </div>
+    </div>
+  </div>
+  <button class="w-full py-2.5 rounded-lg bg-surface-container text-error font-label-md text-label-md hover:bg-error-container transition-colors" onclick="resetPrototype()">
+    Reset Local Demo State
+  </button>
+</div>

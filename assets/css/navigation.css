@@ -1,0 +1,12 @@
+/* Page navigation behaviour
+   - Smooth scrolling for every in-page anchor (nav tabs, CTAs, footer links)
+   - scroll-padding-top equals the fixed header height (h-20 = 5rem) so a section's
+     heading is never hidden underneath the sticky header after a jump. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

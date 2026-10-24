@@ -1,0 +1,104 @@
+<!-- ============================================================
+     SCREEN 06 / 13 — PRODUCT ANALYSIS RESULT (MASTER RESULT)
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-6
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md space-y-space-md" id="sim-screen-6">
+  <div class="flex items-center justify-between">
+    <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(4)">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-data-mono text-label-sm font-semibold">92% DATA COMPLETE</span>
+      <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(11)" title="Compare Product">
+        <span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+      </button>
+    </div>
+  </div>
+  <!-- Product Title Bar -->
+  <div class="space-y-1">
+    <div class="font-data-mono text-label-sm text-on-surface-variant">BARCODE: 8901030829141</div>
+    <h3 class="font-headline-md text-headline-md text-primary font-bold" id="res-prod-title">Wholegrain Oat Biscuits</h3>
+    <div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+      <span class="">Britannia Industries</span>
+      <span class="">•</span>
+      <span class="">150g Net Mass</span>
+      <span class="">•</span>
+      <span class="font-bold text-secondary">Nutri-Score B</span>
+    </div>
+  </div>
+  <!-- Personalized Dietary Alert -->
+  <div class="p-space-sm rounded-xl bg-error-container text-on-error-container space-y-1" id="res-alert-banner">
+    <div class="flex items-center gap-1 font-label-md text-label-md font-bold text-error">
+      <span class="material-symbols-outlined text-[18px]">error</span>
+      <span class="">Dietary Compatibility: Review Recommended</span>
+    </div>
+    <p class="font-body-sm text-body-sm">Contains <strong class="underline">18.2g Sugar per 100g</strong>, which exceeds your configured personal limit (≤ 10g).</p>
+    <div class="font-body-sm text-body-sm text-error font-medium">Allergen alert: Wheat Gluten detected.</div>
+  </div>
+  <!-- Nutrition Facts Table (FDA standard styled) -->
+  <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm space-y-space-xs">
+    <div class="flex items-center justify-between pb-1">
+      <span class="font-headline-sm text-headline-sm font-bold text-primary">Nutrition Facts</span>
+      <span class="font-data-mono text-label-sm text-on-surface-variant">Per 100g</span>
+    </div>
+    <div class="h-1 bg-primary rounded-full"></div>
+    <div class="flex justify-between py-1 font-body-sm text-body-sm">
+      <span class="font-bold text-primary">Energy (Calories)</span>
+      <span class="font-data-mono font-bold">465 kcal</span>
+    </div>
+    <div class="h-px bg-surface-container"></div>
+    <div class="flex justify-between py-1 font-body-sm text-body-sm">
+      <span class="text-on-surface">Total Fat</span>
+      <span class="font-data-mono">19.0g</span>
+    </div>
+    <div class="flex justify-between py-1 pl-4 font-body-sm text-body-sm text-on-surface-variant">
+      <span class="">Saturated Fat</span>
+      <span class="font-data-mono">8.5g</span>
+    </div>
+    <div class="h-px bg-surface-container"></div>
+    <div class="flex justify-between py-1 font-body-sm text-body-sm">
+      <span class="text-on-surface font-semibold text-error">Total Carbohydrates</span>
+      <span class="font-data-mono font-bold">68.0g</span>
+    </div>
+    <div class="flex justify-between py-1 pl-4 font-body-sm text-body-sm text-error font-bold bg-error-container/20 rounded">
+      <span class="">Total Sugars</span>
+      <span class="font-data-mono">18.2g (&gt;10g limit)</span>
+    </div>
+    <div class="h-px bg-surface-container"></div>
+    <div class="flex justify-between py-1 font-body-sm text-body-sm">
+      <span class="text-on-surface">Dietary Fiber</span>
+      <span class="font-data-mono">6.0g</span>
+    </div>
+    <div class="h-px bg-surface-container"></div>
+    <div class="flex justify-between py-1 font-body-sm text-body-sm">
+      <span class="text-on-surface">Protein</span>
+      <span class="font-data-mono">8.5g</span>
+    </div>
+    <div class="h-px bg-surface-container"></div>
+    <div class="flex justify-between py-1 font-body-sm text-body-sm">
+      <span class="text-on-surface">Sodium</span>
+      <span class="font-data-mono">0.42g</span>
+    </div>
+  </div>
+  <!-- Grok Grounded Explanation Box -->
+  <div class="p-space-sm rounded-xl bg-surface-container text-on-surface space-y-1">
+    <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary font-bold">
+      <span class="material-symbols-outlined text-[18px]">psychology</span>
+      <span class="">Grok AI Plain-Language Breakdown</span>
+    </div>
+    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      This biscuit provides wholesome rolled oats (38%), but its glycemic impact is amplified by invert sugar syrup and INS 500(ii) leavening. It satisfies fiber goals but conflicts with strict sugar restriction targets.
+    </p>
+  </div>
+  <!-- Action Buttons -->
+  <div class="space-y-space-xs pt-space-xs">
+    <button class="w-full py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" onclick="jumpToSimulatorScreen(7)">
+      <span class="material-symbols-outlined text-[18px]">search</span>
+      <span class="">Explore Ingredients &amp; Additives (14)</span>
+    </button>
+    <button class="w-full py-2 rounded-lg text-secondary hover:bg-surface-container-low font-label-sm text-label-sm transition-colors text-center" onclick="jumpToSimulatorScreen(9)">
+      Report Discrepancy or Update OCR
+    </button>
+  </div>
+</div>

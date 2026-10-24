@@ -1,0 +1,54 @@
+<!-- ============================================================
+     SCREEN 11 / 13 — PRODUCT COMPARISON
+     Injected into #phone-screen-container by assets/js/simulator/screen-loader.js
+     Root element id: sim-screen-11
+     ============================================================ -->
+<div class="sim-screen hidden p-space-md space-y-space-md" id="sim-screen-11">
+  <div class="flex items-center justify-between">
+    <button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="jumpToSimulatorScreen(6)">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <span class="font-headline-sm text-headline-sm text-primary font-bold">Side-by-Side Analysis</span>
+    <span class="w-6"></span>
+  </div>
+  <div class="grid grid-cols-2 gap-2 font-label-sm text-label-sm text-center">
+    <div class="p-2 rounded-lg bg-surface-container">
+      <div class="font-bold text-primary truncate">Wholegrain Biscuits</div>
+      <div class="text-error font-data-mono">58 / 100 Match</div>
+    </div>
+    <div class="p-2 rounded-lg bg-secondary-container text-on-secondary-container">
+      <div class="font-bold truncate">Seed Energy Bar</div>
+      <div class="text-secondary font-data-mono font-bold">94 / 100 Match</div>
+    </div>
+  </div>
+  <!-- Metric Comparisons Table -->
+  <div class="space-y-space-xs font-body-sm text-body-sm">
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+      <div class="w-1/3 text-on-surface-variant">Sugars</div>
+      <div class="w-1/3 text-center font-data-mono text-error font-bold">18.2g</div>
+      <div class="w-1/3 text-center font-data-mono text-secondary font-bold">6.5g ✓</div>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+      <div class="w-1/3 text-on-surface-variant">Protein</div>
+      <div class="w-1/3 text-center font-data-mono text-primary">8.5g</div>
+      <div class="w-1/3 text-center font-data-mono text-secondary font-bold">22.0g ✓</div>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+      <div class="w-1/3 text-on-surface-variant">Sodium</div>
+      <div class="w-1/3 text-center font-data-mono text-secondary font-bold">0.42g</div>
+      <div class="w-1/3 text-center font-data-mono text-secondary font-bold">0.18g ✓</div>
+    </div>
+    <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+      <div class="w-1/3 text-on-surface-variant">Gluten Alert</div>
+      <div class="w-1/3 text-center font-data-mono text-error font-bold">Yes (Wheat)</div>
+      <div class="w-1/3 text-center font-data-mono text-secondary font-bold">None Detected</div>
+    </div>
+  </div>
+  <!-- Recommendation Card -->
+  <div class="p-space-sm rounded-xl bg-secondary-container/40 text-on-surface space-y-1">
+    <div class="font-label-md text-label-md font-bold text-secondary">Algorithmic Recommendation:</div>
+    <p class="font-body-sm text-body-sm text-on-surface-variant">
+      The Seed Energy Bar delivers 2.5x higher protein density with 64% less sugar, fully satisfying your active glucose limit.
+    </p>
+  </div>
+</div>
