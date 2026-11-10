@@ -42,7 +42,7 @@ package.json                   Build scripts
 | How It Works | `#how-it-works` |
 | Features | `#features` |
 | Technology / View Architecture | `#architecture-section` |
-| About | `#about-the-project` (highlighted through `#roadmap` too) |
+| About | `#about-the-project`|
 | Try Interactive Demo | `#simulator-section` |
 | Logo | `#overview` |
 
@@ -56,18 +56,3 @@ npm install
 npm run build:css      # or: npm run watch:css while editing
 ```
 The built `assets/css/tailwind.css` is committed, so no build step is required to deploy.
-
-## Deploy on Vercel
-Import the repo/folder as a static site: Framework Preset **Other**, no build command,
-output directory = project root. (Optional: build command `npm run build:css` to rebuild on every deploy.)
-
-## SEO (done for free)
-`index.html` contains the title, meta description, canonical URL, Open Graph/Twitter tags and
-JSON-LD (site name). Also included: `robots.txt`, `sitemap.xml`, `assets/img/favicon.svg`,
-`assets/img/og-image.png`, `vercel.json` (headers).
-
-The placeholder URL is `https://nutrilabel.vercel.app`. After deploying, if your real URL differs:
-`node tools/set-site-url.js https://your-real-url.vercel.app` then redeploy.
-
-Then register the site with Google Search Console (free): add the URL, verify, submit
-`/sitemap.xml`, and use "URL Inspection -> Request indexing".
